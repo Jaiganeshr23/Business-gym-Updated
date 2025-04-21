@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battle Fitness Unisex Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .fade-up {
+      animation: fadeUp 0.8s ease-out both;
+    }
+  
+    .fade-delay-1 {
+      animation-delay: 0.2s;
+    }
+  
+    .fade-delay-2 {
+      animation-delay: 0.4s;
+    }
+  
+    .fade-delay-3 {
+      animation-delay: 0.6s;
+    }
+  
+    .fade-delay-4 {
+      animation-delay: 0.8s;
+    }
+  </style>
+  
+  
+</head>
+<body class="bg-white text-black">
+  <!-- Navbar -->
+<header class="fixed w-full z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-red-600">Battle Fitness Unisex Gym</h1>
+    <nav class="hidden md:flex space-x-6 text-lg">
+      <a href="#about" class="hover:text-red-600">About Us</a> <!-- Added -->
+      <a href="#services" class="hover:text-red-600">Services</a>
+      <a href="#gym" class="hover:text-red-600">Gym</a>
+      <a href="#franchise" class="hover:text-red-600">Franchise</a>
+      <a href="#contact" class="hover:text-red-600">Contact</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl">☰</button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2">
+    <a href="#about" class="block text-lg">About Us</a> <!-- Added -->
+    <a href="#services" class="block text-lg">Services</a>
+    <a href="#gym" class="block text-lg">Gym</a>
+    <a href="#franchise" class="block text-lg">Franchise</a>
+    <a href="#contact" class="block text-lg">Contact</a>
+  </div>
+</header>
+
+ <!-- Hero Section -->
+<section class="relative min-h-screen bg-cover bg-center text-white flex items-center justify-center px-4" style="background-image: url('./gym Background 1.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="relative z-10 text-center max-w-3xl">
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+      Become the <span class="text-red-600">Strongest</span> Version of Yourself at <span class="text-red-600">Battle Fitness</span>
+    </h2>
+    <p class="mt-6 text-lg md:text-xl">Train Hard. Stay Consistent. Level Up.</p>
+
+  </div>
+  
+</section>
+<!-- About Us Section -->
+<section id="about" class="py-12 px-4 bg-white text-center md:text-left">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-red-600 mb-6">About Us</h2>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-4">
+      Welcome to <span class="font-semibold text-black">Battle Fitness A/C</span> – not just a gym, but a <span class="text-red-600 font-semibold">way of life</span>.
+      We are recognized as a <span class="text-red-600 font-semibold">premium fitness destination</span> that promotes a healthy lifestyle.
+    </p>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-4">
+      Based in <span class="font-medium">Thiruvarur and Mannarkudi</span>, we’re one of the <span class="text-red-600 font-semibold">top fitness centers</span>, offering 
+      exclusive training programs designed to help you transform your body and mind.
+    </p>
+    <ul class="text-lg md:text-xl text-gray-800 list-disc pl-6 mb-4">
+      <li><span class="font-semibold text-black">Functional Training</span> sessions for real-world strength</li>
+      <li><span class="font-semibold text-black">Fitness Boot Camps</span> to build endurance and motivation</li>
+      <li><span class="font-semibold text-black">Body Transformation</span> programs tailored to your goals</li>
+      <li><span class="font-semibold text-black">Weight Loss & Gain</span> with expert nutrition and guidance</li>
+    </ul>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">
+      Our mission is to deliver the <span class="text-red-600 font-semibold">best fitness experience</span> under the guidance of 
+      <span class="font-semibold">qualified and experienced professionals</span>. Join us and be part of a growing 
+      fitness movement across the city.
+    </p>
+  </div>
+</section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-12 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+      <div class="transition-section bg-black text-white p-6 rounded-xl shadow-xl">
+        <h3 class="text-xl font-bold">Functional Training</h3>
+        <p class="mt-2">Functional training is a program by Battle Fitness which is one of the best functional fitness training in Thiruvarur,Mannarkudi.</p>
+        <button onclick="showDetails('Functional Training Details')" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Find Out More</button>
+      </div>
+      <div class="transition-section bg-black text-white p-6 rounded-xl shadow-xl">
+        <h3 class="text-xl font-bold">Fitness Bootcamp</h3>
+        <p class="mt-2">The solution is here: long-lasting fitness results & healthy lifestyle are promised.</p>
+        <button onclick="showDetails('Fitness Bootcamp Details')" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Find Out More</button>
+      </div>
+      <div class="transition-section bg-black text-white p-6 rounded-xl shadow-xl">
+        <h3 class="text-xl font-bold">Body Transformation</h3>
+        <p class="mt-2">We’ve got the perfect workout plan for you if you’re planning to transform.</p>
+        <button onclick="showDetails('Body Transformation Details')" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Find Out More</button>
+      </div>
+      <div class="transition-section bg-black text-white p-6 rounded-xl shadow-xl">
+        <h3 class="text-xl font-bold">Weight Loss & Gain</h3>
+        <p class="mt-2">Garner valuable insights on several weight loss and gain programs.</p>
+        <button onclick="showDetails('Weight Management Details')" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Find Out More</button>
+      </div>
+    </div>
+    <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
+      <div class="bg-white p-6 rounded-lg max-w-md text-center popup">
+        <h3 id="details-title" class="text-2xl font-bold mb-4">Detail Title</h3>
+        <p>More information coming soon...</p>
+        <button onclick="closeDetails()" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Close</button>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Gym Section -->
+  <section id="gym" class="py-12 bg-white">
+    <h2 class="text-center text-3xl font-bold mb-6">Inside Our Gym</h2>
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-4">
+      <img src="./our gym inside 1.jpeg" class="rounded-xl shadow-md">
+      <img src="./our gym inside 2.jpeg" class="rounded-xl shadow-md">
+      <img src="./our gym inside 3.JPG" class="rounded-xl shadow-md">
+  
+    </div>
+  </section>
+<!-- Franchise Section--> 
+  <section id="franchise" class="py-12 bg-gray-100">
+    <h2 class="text-center text-3xl font-bold mb-6">Franchise Opportunities</h2>
+    <form class="max-w-xl mx-auto space-y-4">
+      <input type="text" placeholder="Name*" class="w-full p-3 border rounded">
+      <input type="email" placeholder="Email*" class="w-full p-3 border rounded">
+      <input type="tel" placeholder="Phone Number*" class="w-full p-3 border rounded">
+      <textarea placeholder="Detail Message" class="w-full p-3 border rounded"></textarea>
+      <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded">Enquire</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+<footer id="contact" class="bg-black text-white py-8 px-4">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+    <div>
+      <h3 class="text-xl font-bold">Battle Fitness Unisex Gym</h3>
+      <p class="mt-2">Thiruvarur is our first branch and Mannarkudi is our second branch. Join us and begin your fitness journey!</p>
+    </div>
+    <div>
+      <h4 class="font-bold">Quick Links</h4>
+      <ul class="mt-2 space-y-1">
+        <li><a href="#" class="hover:text-red-600">Home</a></li>
+        <li><a href="#services" class="hover:text-red-600">Services</a></li>
+        <li><a href="#franchise" class="hover:text-red-600">Franchise</a></li>
+        <li><a href="#contact" class="hover:text-red-600">Contact</a></li>
+      </ul>
+      <div class="mt-4 space-x-4">
+        <a href="https://www.instagram.com" target="_blank" class="inline-block hover:text-red-600">Instagram</a>
+        <a href="https://wa.me/919751351156" target="_blank" class="inline-block hover:text-red-600">WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-bold">Contact</h4>
+      <p class="mt-2 font-semibold">Mr. Maran<br><span class="text-sm">Advanced Physique Transformation Expert</span></p>
+      <p class="mt-2">pulivalam, Thiruvarur - 610109<br>P: +91 97513 51156<br>E: a</p>
+      <p class="mt-2">Mannarkudi - 610109<br>P: +91 97513 51156<br>E: a</p>
+      
+    </div>
+    
+  </div>
+  <div class="text-center mt-6 text-sm">&copy; 2025 Battle Fitness Unisex Gym. Designed by Jaiganesh.</div>
+</footer>
+
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function showDetails(title) {
+      document.getElementById('details-title').innerText = title;
+      document.getElementById('details-modal').classList.remove('hidden');
+      document.getElementById('details-modal').classList.add('flex');
+    }
+
+    function closeDetails() {
+      document.getElementById('details-modal').classList.add('hidden');
+      document.getElementById('details-modal').classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
