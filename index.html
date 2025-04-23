@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Battle Fitness is your premium unisex gym in Thiruvarur & Mannarkudi. Functional training, body transformation & expert fitness coaching.">
   <title>Battle Fitness Unisex Gym</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="./bg01.jpg" type="image/x-icon" />
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -18,7 +20,13 @@
         opacity: 1;
         transform: translateY(0);
       }
+      
+      
     }
+    
+    .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out;
+  }
   
     .fade-up {
       animation: fadeUp 0.8s ease-out both;
@@ -39,6 +47,36 @@
     .fade-delay-4 {
       animation-delay: 0.8s;
     }
+    html {
+    scroll-behavior: smooth;
+  }
+
+  /* Navbar gradient background and hover underline effect */
+  header {
+    background: linear-gradient(to right, #eae7e7, #f44141, #fbfafa);
+  }
+
+  nav a,
+  #mobile-menu a {
+    position: relative;
+  }
+
+  nav a::after,
+  #mobile-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #dc2626; /* red-600 */
+    transition: width 0.3s;
+  }
+
+  nav a:hover::after,
+  #mobile-menu a:hover::after {
+    width: 100%;
+  }
   </style>
   
   
@@ -130,13 +168,17 @@
         <button onclick="showDetails('Weight Management Details')" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Find Out More</button>
       </div>
     </div>
-    <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
-      <div class="bg-white p-6 rounded-lg max-w-md text-center popup">
-        <h3 id="details-title" class="text-2xl font-bold mb-4">Detail Title</h3>
-        <p>More information coming soon...</p>
-        <button onclick="closeDetails()" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">Close</button>
+    <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50 transition-opacity duration-300">
+      <div class="bg-white p-6 rounded-lg max-w-md text-center animate-fade-in-up popup shadow-xl">
+        <h3 id="details-title" class="text-2xl font-bold mb-4 text-red-600">Detail Title</h3>
+        <p id="details-content" class="text-gray-700">Service details will appear here.</p>
+        <button onclick="closeDetails()" class="mt-6 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded shadow">Close</button>
       </div>
     </div>
+    
+    </div>
+
+    
     
   </section>
 
@@ -161,13 +203,89 @@
       <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded">Enquire</button>
     </form>
   </section>
+  <!-- Why Choose Us -->
+<section class="py-12 bg-white text-center">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-red-600 mb-6">Why Choose Battle Fitness?</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-gray-800">
+      <div class="p-6 border rounded-lg shadow-md hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-2">Certified Trainers</h3>
+        <p>Train under nationally certified fitness experts with proven track records.</p>
+      </div>
+      <div class="p-6 border rounded-lg shadow-md hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-2">Modern Equipment</h3>
+        <p>Top-notch, cutting-edge gym equipment to support all fitness levels.</p>
+      </div>
+      <div class="p-6 border rounded-lg shadow-md hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-2">Motivational Environment</h3>
+        <p>Positive, high-energy atmosphere to keep you pushing toward your goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-12 bg-gray-100">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-red-600 mb-6">What Our Members Say</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="italic text-lg">"Battle Fitness helped me lose 12 kgs in 4 months. Trainers are amazing and motivate me every day!"</p>
+        <p class="mt-4 font-semibold text-red-600">– Keerthana, Mannarkudi</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="italic text-lg">"The best gym in Thiruvarur! Great ambiance, structured workouts, and super results."</p>
+        <p class="mt-4 font-semibold text-red-600">– Rajesh, Thiruvarur</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meet Our Trainers -->
+<section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-red-600 text-center mb-6">Meet Our Trainers</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="p-4 border rounded-lg shadow hover:shadow-lg">
+        <img src="./maran1.jpeg" alt="Trainer 1" class="w-32 h-32 mx-auto rounded-full mb-4">
+        <h3 class="font-bold text-xl">Mr. Maran</h3>
+        <p class="text-gray-700 text-sm">Advanced Physique Transformation Expert</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-red-600 text-white py-12 text-center">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Life?</h2>
+    <p class="mb-6 text-lg">Join Battle Fitness today and start your fitness journey with us.</p>
+    <button onclick="openGetStarted()" class="bg-white text-red-600 font-bold px-6 py-3 rounded hover:bg-gray-100">Get Started</button>
+  </div>
+</section>
+<!-- Get Started Popup Form -->
+<div id="get-started-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden justify-center items-center z-50">
+  <div class="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-lg">
+    <h3 class="text-2xl font-bold text-red-600 mb-4">Get Started</h3>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded" required>
+      <input type="tel" placeholder="Contact Number" class="w-full p-3 border rounded" required>
+      <textarea placeholder="Tell us about your goals..." class="w-full p-3 border rounded" rows="4" required></textarea>
+      <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded">Submit</button>
+    </form>
+    <button onclick="closeGetStarted()" class="mt-4 text-red-600 font-semibold hover:underline">Close</button>
+  </div>
+</div>
+
+
 
   <!-- Footer -->
 <footer id="contact" class="bg-black text-white py-8 px-4">
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
     <div>
       <h3 class="text-xl font-bold">Battle Fitness Unisex Gym</h3>
-      <p class="mt-2">Thiruvarur is our first branch and Mannarkudi is our second branch. Join us and begin your fitness journey!</p>
+      <p class="mt-2">At Battle Fitness, we don’t just build bodies — we build confidence, discipline, and unstoppable energy. Whether you're in Thiruvarur or Mannarkudi, your transformation starts here. Step in, sweat hard, and unleash your inner warrior!</p>
     </div>
     <div>
       <h4 class="font-bold">Quick Links</h4>
@@ -177,18 +295,55 @@
         <li><a href="#franchise" class="hover:text-red-600">Franchise</a></li>
         <li><a href="#contact" class="hover:text-red-600">Contact</a></li>
       </ul>
-      <div class="mt-4 space-x-4">
-        <a href="https://www.instagram.com" target="_blank" class="inline-block hover:text-red-600">Instagram</a>
-        <a href="https://wa.me/919751351156" target="_blank" class="inline-block hover:text-red-600">WhatsApp</a>
+      <div class="mt-4 flex items-center space-x-6">
+        <a href="https://www.instagram.com/battle_fitness_field?igsh=bjVhNml2dGNpdzg4" target="_blank" class="flex items-center space-x-1 hover:text-red-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 4a5 5 0 110 10 5 5 0 010-10zm6.5-1.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
+          </svg>
+          <span>Instagram</span>
+        </a>
+        
+        <a href="https://wa.me/919751351156" target="_blank" class="flex items-center space-x-1 hover:text-red-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.93 4.93a10 10 0 0114.14 0 10 10 0 010 14.14c-3.9 3.9-10.2 4.06-14.14 0a10 10 0 010-14.14zM8 15l1.5-1.5a6.38 6.38 0 004.5 0L16 15M9 10h.01M15 10h.01" />
+          </svg>
+          <span>WhatsApp</span>
+        </a>
       </div>
+      
     </div>
     <div>
       <h4 class="font-bold">Contact</h4>
-      <p class="mt-2 font-semibold">Mr. Maran<br><span class="text-sm">Advanced Physique Transformation Expert</span></p>
-      <p class="mt-2">pulivalam, Thiruvarur - 610109<br>P: +91 97513 51156<br>E: a</p>
-      <p class="mt-2">Mannarkudi - 610109<br>P: +91 97513 51156<br>E: a</p>
+      <p class="mt-2 font-semibold">
+        Mr. Maran<br>
+        <span class="text-sm">Advanced Physique Transformation Expert</span>
+      </p>
       
+      <p class="mt-2">
+        Pulivalam, Thiruvarur - 610109<br>
+        P: +91 97513 51156<br>
+        <span class="flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" />
+          </svg>
+          <a href="mailto:battlefitnesstvr@gmail.com" class="hover:text-red-600">battlefitnesstvr@gmail.com</a>
+        </span>
+      </p>
+    
+      <p class="mt-2">
+        Mannarkudi - 610109<br>
+        P: +91 97513 51156<br>
+        <span class="flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" />
+          </svg>
+          <a href="mailto:battlefitnessmannai@gmail.com" class="hover:text-red-600">battlefitnessmannai@gmail.com</a>
+        </span>
+      </p>
     </div>
+    
     
   </div>
   <div class="text-center mt-6 text-sm">&copy; 2025 Battle Fitness Unisex Gym. Designed by Jaiganesh.</div>
@@ -212,6 +367,52 @@
       document.getElementById('details-modal').classList.add('hidden');
       document.getElementById('details-modal').classList.remove('flex');
     }
+    function openGetStarted() {
+  document.getElementById('get-started-modal').classList.remove('hidden');
+  document.getElementById('get-started-modal').classList.add('flex');
+}
+
+function closeGetStarted() {
+  document.getElementById('get-started-modal').classList.add('hidden');
+  document.getElementById('get-started-modal').classList.remove('flex');
+}
+function showDetails(service) {
+    const detailsTitle = document.getElementById('details-title');
+    const detailsContent = document.getElementById('details-content');
+    const modal = document.getElementById('details-modal');
+
+    let content = "";
+
+    switch(service) {
+      case 'Functional Training Details':
+        detailsTitle.innerText = "Functional Training";
+        content = `Battle Fitness's Functional Training program improves your body's ability to perform everyday activities safely and efficiently. We combine strength, flexibility, and coordination exercises designed to replicate real-world movement patterns. Perfect for athletes and beginners alike!`;
+        break;
+
+      case 'Fitness Bootcamp Details':
+        detailsTitle.innerText = "Fitness Bootcamp";
+        content = `Our Fitness Bootcamp is an intense group workout that blends cardio, strength, and HIIT. It’s designed to push your limits, burn calories fast, and build lean muscle. Expect variety, motivation, and transformation—all in a fun, team-based atmosphere.`;
+        break;
+
+      case 'Body Transformation Details':
+        detailsTitle.innerText = "Body Transformation";
+        content = `Whether you're aiming to bulk up, slim down, or completely reshape your body, our Body Transformation program offers tailored workout plans, nutrition coaching, and one-on-one guidance. Achieve your dream physique with measurable progress and full support.`;
+        break;
+
+      case 'Weight Management Details':
+        detailsTitle.innerText = "Weight Loss & Gain";
+        content = `From strategic calorie tracking to customized training plans, our Weight Management services help you lose excess fat or gain healthy muscle mass. You'll get expert coaching, diet support, and progress tracking to ensure your success at every stage.`;
+        break;
+    }
+
+    detailsContent.innerText = content;
+    modal.classList.remove('hidden');
+  }
+
+  function closeDetails() {
+    document.getElementById('details-modal').classList.add('hidden');
+  }
+
   </script>
 </body>
 </html>
